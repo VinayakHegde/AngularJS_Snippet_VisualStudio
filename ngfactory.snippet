@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>AngularJS Factory</Title>
+      <Author>Vinayak Hegde</Author>
+      <Description>AngularJS Factory</Description>
+      <Shortcut>ngfact</Shortcut>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>moduleName</ID>
+          <ToolTip>Name of module</ToolTip>
+          <Default>app</Default>
+        </Literal>
+        <Literal>
+          <ID>factoryName</ID>
+          <ToolTip>Name of factory</ToolTip>
+          <Default>myFactory</Default>
+        </Literal>
+        <Literal>
+          <ID>dependencies</ID>
+          <ToolTip>Inject dependencies</ToolTip>
+          <Default>$log</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="JavaScript">
+        <![CDATA[(function () {
+    'use strict';
+
+    angular
+        .module('$moduleName$')
+        .factory('$factoryName$', $factoryName$);
+
+    $factoryName$.$$inject = ['$dependencies$'];
+
+    function $factoryName$($dependencies$) {
+
+        var factory = {};
+
+        return factory;
+    }
+})();]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

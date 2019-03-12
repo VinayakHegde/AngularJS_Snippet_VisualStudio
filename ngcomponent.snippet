@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>AngularJS Component</Title>
+      <Author>Vinayak Hegde</Author>
+      <Description>AngularJS Component</Description>
+      <Shortcut>ngcomp</Shortcut>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>moduleName</ID>
+          <ToolTip>Name of module</ToolTip>
+          <Default>app</Default>
+        </Literal>
+        <Literal>
+          <ID>componentName</ID>
+          <ToolTip>Name of component</ToolTip>
+          <Default>myComponent</Default>
+        </Literal>
+        <Literal>
+          <ID>dependencies</ID>
+          <ToolTip>Inject dependencies</ToolTip>
+          <Default>$log</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="JavaScript">
+        <![CDATA[(function () {
+    'use strict';
+
+    angular
+        .module('$moduleName$')
+        .component('$componentName$', {
+          bindings: {},
+          require: {},
+          transclude: false,
+          templateUrl: '~/app/$moduleName$/$componentName$/$componentName$.component.html',
+          controller: componentController
+    });
+
+    componentController.$$inject = ['$dependencies$'];
+
+    function componentController($dependencies$) {
+
+        this.$$onInit = function () {
+        }
+
+        this.$$postLink = function () { 
+        }
+
+        this.$$onChanges = function (changes) {
+        }
+
+        this.$$doCheck()= function () {
+        }
+
+        this.$$onDestroy = function () {
+        }
+    }
+
+})();
+
+        ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
